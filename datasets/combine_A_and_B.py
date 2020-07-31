@@ -16,11 +16,11 @@ for arg in vars(args):
     print('[%s] = ' % arg,  getattr(args, arg))
 
 splits = os.listdir(args.fold_A)
-
+img_list = []
 for sp in splits:
     img_fold_A = os.path.join(args.fold_A, sp)
     img_fold_B = os.path.join(args.fold_B, sp)
-    img_list = os.listdir(img_fold_A)
+    img_list.append(img_fold_A)
     if args.use_AB: 
         img_list = [img_path for img_path in img_list if '_A.' in img_path]
 
